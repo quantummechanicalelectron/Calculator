@@ -23,4 +23,8 @@ public class Parent {
     public int String2int(String start){
         return Integer.parseInt(start);
     }
+
+    public String double2string(double start){
+        return String.valueOf(start);
+    }
 }

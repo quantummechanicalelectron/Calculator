@@ -18,6 +18,15 @@ public class Versuch4 extends Parent{
         printDoubleErgebnis(zwischenErgebnis);
     }
 
+    public void ausführen(String input){
+        ApplicationWindow fenster = new ApplicationWindow();
+        finalEingabe = input;
+        countOperators();
+        split();
+        ergebnis();
+        fenster.ergebnisAusgeben(double2string(zwischenErgebnis));
+    }
+
     public void countOperators(){
         for(int i = 0; i<finalEingabe.length(); i++){
             if(finalEingabe.charAt(i) == '+' || finalEingabe.charAt(i) == '-' || finalEingabe.charAt(i) == '*' || finalEingabe.charAt(i) == '/'){
