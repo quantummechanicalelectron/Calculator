@@ -23,8 +23,4 @@ public class Parent {
     public int String2int(String start){
         return Integer.parseInt(start);
     }
-
-    public void test(){
-        System.out.println("fuck yo bitch ass hole");
-    }
 }
