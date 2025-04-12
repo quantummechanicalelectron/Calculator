@@ -37,7 +37,7 @@ public class Versuch4 extends Parent{
     public void ergebnis() {
         zwischenErgebnis = zahlen[0];
         for (int i = 0; i < ops; i++) {
-            switch (StringOPs.charAt(i)) {
+            switch (St ringOPs.charAt(i)) {
                 case '+':
                     zwischenErgebnis = zwischenErgebnis + zahlen[i + 1];  // Addition
                     break;
