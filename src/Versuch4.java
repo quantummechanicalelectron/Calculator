@@ -3,7 +3,7 @@ import java.util.*;
 public class Versuch4 extends Parent{
 
     String regex = "[\\-\\+\\*\\/]";
-    int ergebnis;
+    String ergebnis;
     int[] zahlen = new int[100];
     String finalEingabe;
     String StringOPs = "";
@@ -16,6 +16,13 @@ public class Versuch4 extends Parent{
         split();
         ergebnis();
         printDoubleErgebnis(zwischenErgebnis);
+    }
+
+    public void ausführen(String input){
+        finalEingabe = input;
+        countOperators();
+        split();
+        ergebnis();
     }
 
     public void countOperators(){
@@ -35,6 +42,7 @@ public class Versuch4 extends Parent{
     }
 
     public void ergebnis() {
+        boolean invalid = false;
         zwischenErgebnis = zahlen[0];
         for (int i = 0; i < ops; i++) {
             switch (StringOPs.charAt(i)) {
@@ -51,10 +59,14 @@ public class Versuch4 extends Parent{
                     if (zahlen[i + 1] != 0) {
                         zwischenErgebnis = zwischenErgebnis / zahlen[i + 1];
                     } else {
-                        System.out.println("Fehler: Division durch Null.");
+                        ergebnis = "Fehler";
+                        invalid = true;
                     }
                     break;
             }
+        }
+        if (!invalid) {
+            ergebnis = double2string(zwischenErgebnis);
         }
     }
 }
