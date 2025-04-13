@@ -49,7 +49,7 @@ public class ApplicationWindow extends JFrame{
             input = textfield_input.getText();
         if(input != null) {
             V4.ausführen(input);
-            ergebnisAusgeben(p.double2string(V4.zwischenErgebnis));
+            ergebnisAusgeben(V4.ergebnis);
         }
     }
 
