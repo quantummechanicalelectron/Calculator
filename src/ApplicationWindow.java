@@ -1,6 +1,5 @@
 import javax.swing.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
+import java.awt.event.*;
 
 public class ApplicationWindow extends JFrame{
 
@@ -17,7 +16,7 @@ public class ApplicationWindow extends JFrame{
     public void initWindow() {
         textfield_input = new JTextField();
         textfield_ergebnis = new JTextField();
-        button = new JButton("rechnen"); //das in den Klammern ist der Text des Buttons
+        button = new JButton("Rechnen"); //das in den Klammern ist der Text des Buttons
 
         textfield_input.setBounds(10, 10, 300, 30); //markiert wie und wo Feld platziert werden soll
         textfield_ergebnis.setBounds(10, 100, 300, 30); //markiert wie und wo Feld platziert werden soll
@@ -31,7 +30,13 @@ public class ApplicationWindow extends JFrame{
             @Override
             public void actionPerformed(ActionEvent arg0) {
                 berechneButtonClicked();
-                //hier muss später das Berechnen gestartet werden
+            }
+        });
+
+        textfield_input.addActionListener(new ActionListener() {
+
+            public void actionPerformed(ActionEvent arg0) {
+                berechneButtonClicked();
             }
         });
         this.pack(); //passt die Größe des Fensters automatisch an
@@ -52,5 +57,4 @@ public class ApplicationWindow extends JFrame{
         String Ergebnis = start;
         textfield_ergebnis.setText(Ergebnis);
     }
-
 }
