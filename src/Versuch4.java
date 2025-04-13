@@ -24,7 +24,6 @@ public class Versuch4 extends Parent{
         countOperators();
         split();
         ergebnis();
-        fenster.ergebnisAusgeben(double2string(zwischenErgebnis));
     }
 
     public void countOperators(){

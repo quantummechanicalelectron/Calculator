@@ -20,8 +20,8 @@ public class ApplicationWindow extends JFrame{
         button = new JButton("rechnen"); //das in den Klammern ist der Text des Buttons
 
         textfield_input.setBounds(10, 10, 300, 30); //markiert wie und wo Feld platziert werden soll
-        textfield_ergebnis.setBounds(10, 80, 300, 30); //markiert wie und wo Feld platziert werden soll
-        button.setBounds(10, 50, 100, 30); //markiert wie und wo Button platziert werden soll
+        textfield_ergebnis.setBounds(10, 100, 300, 30); //markiert wie und wo Feld platziert werden soll
+        button.setBounds(10, 55, 100, 30); //markiert wie und wo Button platziert werden soll
 
         this.getContentPane().add(textfield_input); //fügt Feld dem Fenster hinzu
         this.getContentPane().add(textfield_ergebnis); //fügt Feld dem Fenster hinzu
@@ -39,10 +39,12 @@ public class ApplicationWindow extends JFrame{
 
     public void berechneButtonClicked() {
         Versuch4 V4 = new Versuch4();
+        Parent p = new Parent();
         String input = "";
             input = textfield_input.getText();
         if(input != null) {
             V4.ausführen(input);
+            ergebnisAusgeben(p.double2string(V4.zwischenErgebnis));
         }
     }
 
